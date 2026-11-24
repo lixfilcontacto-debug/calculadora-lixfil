@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargar Calculadora Lixfil para Android</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: var(--card);
+      max-width: 440px;
+      width: 100%;
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 88px;
+      height: 88px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border-radius: 22px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: space-around;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 14px 10px;
+      border-radius: 16px;
+      margin-bottom: 26px;
+    }
+
+    .badge-item span {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .badge-item small {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .btn-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 24px;
+      border-radius: 16px;
+      transition: transform 0.15s ease, background 0.2s ease;
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+      margin-bottom: 12px;
+    }
+
+    .btn-download:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-web {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: 24px;
+    }
+
+    .btn-web:hover {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .features {
+      text-align: left;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .features h2 {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .check {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .steps {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: left;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .steps strong {
+      color: #60a5fa;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <!-- Ícono de la app (puedes cambiarlo por <img src="tu-logo.png" class="app-icon"> si subes tu logo) -->
+    <div class="app-icon">Lx</div>
+
+    <h1>Calculadora Lixfil</h1>
+    <p class="subtitle">Rápida, ligera y lista para usar sin internet</p>
+
+    <div class="badges">
+      <div class="badge-item">
+        <span>3.2 MB</span>
+        <small>Tamaño</small>
+      </div>
+      <div class="badge-item">
+        <span>Android</span>
+        <small>Plataforma</small>
+      </div>
+      <div class="badge-item">
+        <span>Gratis</span>
+        <small>100% Sin anuncios</small>
+      </div>
+    </div>
+
+    <!-- Enlace directo al último APK publicado en GitHub Releases -->
+    <a href="https://github.com" class="btn-download">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Descargar APK (Android)
+    </a>
+
+    <a href="https://github.io" class="btn-web">
+      Abrir versión web sin instalar →
+    </a>
+
+    <div class="features">
+      <h2>Características principales</h2>
+      <ul class="feature-list">
+        <li><span class="check">✓</span> Funciona sin conexión a internet (Modo Offline)</li>
+        <li><span class="check">✓</span> Actualizaciones automáticas sin reinstalar</li>
+        <li><span class="check">✓</span> Interfaz limpia, rápida y de bajo consumo</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <strong>¿Cómo instalar en Android?</strong>
+      1. Toca el botón azul para descargar el archivo.<br>
+      2. Abre el archivo descargado desde tus notificaciones.<br>
+      3. Si Android lo solicita, activa <em>"Permitir desde esta fuente"</em> e instala.
+    </div>
+  </main>
+
+</body>
+</html>
