@@ -1991,7 +1991,7 @@
             justify-content: center;
             align-items: center;
             touch-action: manipulation;
-            transition: filter 0.15s ease, transform 0.1s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            transition: filter 0.15s ease, transform 0.1s ease;
         }
         button.sci-btn:hover  { filter: brightness(1.15); }
         button.sci-btn:active { transform: scale(0.94); filter: brightness(0.9); }
@@ -3683,7 +3683,6 @@
                 calcRoot.classList.add('light-theme');
                 if (themeColorMeta) themeColorMeta.setAttribute('content', '#f8f9fa');
             }
-            syncAndroidStatusBar(savedTheme === 'light');
 
             if (localStorage.getItem('calcProUnlocked') === 'true') {
                 isProUnlocked = true;
@@ -4148,15 +4147,24 @@
     }
 
     /* ============ CONTROL DE ORIENTACIÓN HORIZONTAL EN PRO ============ */
-    function setOrientationLock(landscape) {
-        if (screen.orientation && screen.orientation.lock) {
-            if (landscape) {
-                screen.orientation.lock('landscape').catch(() => {});
-            } else if (screen.orientation.unlock) {
-                try { screen.orientation.unlock(); } catch {}
-            }
+ function setOrientationLock(landscape) {
+    if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.ScreenOrientation) {
+        const { ScreenOrientation } = window.Capacitor.Plugins;
+        if (landscape) {
+            ScreenOrientation.lock({ orientation: 'landscape' }).catch(() => {});
+        } else {
+            ScreenOrientation.lock({ orientation: 'portrait' }).catch(() => {});
+        }
+        return;
+    }
+    if (screen.orientation) {
+        if (landscape && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch(() => {});
+        } else if (screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch {}
         }
     }
+}
 
     function syncScientificLayout() {
         const useProLandscape = isPro && isSciOpen;
@@ -5596,19 +5604,11 @@
     }
 
     /* ============ TEMA CLARO / OSCURO ============ */
-    function syncAndroidStatusBar(isLight) {
-  if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.StatusBar) {
-    const { StatusBar } = window.Capacitor.Plugins;
-    StatusBar.setOverlaysWebView({ overlay: true });
-    StatusBar.setStyle({ style: isLight ? 'LIGHT' : 'DARK' });
-  }
-}
-    function toggleTheme() {
+     function toggleTheme() {
         const isLight = calcRoot.classList.toggle('light-theme');
         if (themeColorMeta) {
             themeColorMeta.setAttribute('content', isLight ? '#f8f9fa' : '#000000');
         }
-        syncAndroidStatusBar(isLight);
         try {
             localStorage.setItem('calcTheme', isLight ? 'light' : 'dark');
         } catch {}
