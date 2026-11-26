@@ -217,42 +217,259 @@
         }
 
         :root[data-accent="copper"] {
-            --op-bg: #362015; --op-color: #e69d73; --ac-color: #e69d73;
+            --op-bg: linear-gradient(135deg, #8c4a27 0%, #e09165 50%, #7a3b1a 100%);
+            --op-color: #ffffff; --ac-color: #e69d73;
             --equals-bg: linear-gradient(135deg, #8c4a27 0%, #e09165 50%, #7a3b1a 100%);
             --equals-dot: #c87544; --equals-color: #ffffff;
+            --grad-bg: linear-gradient(135deg, #8c4a27 0%, #e09165 50%, #7a3b1a 100%);
+            --grad-text: #ffffff;
+            --grad-border: #e69d73;
             --cursor-color: #e69d73; --selection-bg: rgba(200, 117, 68, 0.32);
         }
         :root.light-theme[data-accent="copper"] {
-            --op-bg: #faece3; --op-color: #8f4820; --ac-color: #8f4820;
+            --op-bg: linear-gradient(135deg, #9c522b 0%, #d48255 50%, #7d3d1b 100%);
+            --op-color: #ffffff; --ac-color: #8f4820;
             --equals-bg: linear-gradient(135deg, #9c522b 0%, #d48255 50%, #7d3d1b 100%);
             --equals-dot: #b86638; --equals-color: #ffffff;
+            --grad-bg: linear-gradient(135deg, #9c522b 0%, #d48255 50%, #7d3d1b 100%);
+            --grad-text: #ffffff;
+            --grad-border: #9c522b;
             --cursor-color: #8f4820; --selection-bg: rgba(184, 102, 56, 0.24);
         }
 
         :root[data-accent="silver"] {
-            --op-bg: #25282e; --op-color: #d8dee9; --ac-color: #d8dee9;
+            --op-bg: linear-gradient(135deg, #757c85 0%, #e2e6ec 50%, #636973 100%);
+            --op-color: #141619; --ac-color: #d8dee9;
             --equals-bg: linear-gradient(135deg, #757c85 0%, #e2e6ec 50%, #636973 100%);
             --equals-dot: #b0b7c2; --equals-color: #141619;
+            --grad-bg: linear-gradient(135deg, #757c85 0%, #e2e6ec 50%, #636973 100%);
+            --grad-text: #141619;
+            --grad-border: #d8dee9;
             --cursor-color: #d8dee9; --selection-bg: rgba(176, 183, 194, 0.32);
         }
         :root.light-theme[data-accent="silver"] {
-            --op-bg: #eceef2; --op-color: #3f4652; --ac-color: #3f4652;
+            --op-bg: linear-gradient(135deg, #68707a 0%, #c4cbd4 50%, #525861 100%);
+            --op-color: #ffffff; --ac-color: #3f4652;
             --equals-bg: linear-gradient(135deg, #68707a 0%, #c4cbd4 50%, #525861 100%);
             --equals-dot: #8c94a0; --equals-color: #ffffff;
+            --grad-bg: linear-gradient(135deg, #68707a 0%, #c4cbd4 50%, #525861 100%);
+            --grad-text: #ffffff;
+            --grad-border: #525861;
             --cursor-color: #3f4652; --selection-bg: rgba(104, 112, 122, 0.24);
         }
 
         :root[data-accent="gold"] {
-            --op-bg: #362b10; --op-color: #ffd54f; --ac-color: #ffd54f;
+            --op-bg: linear-gradient(135deg, #9e7414 0%, #f5cf56 50%, #8a6209 100%);
+            --op-color: #1a1300; --ac-color: #ffd54f;
             --equals-bg: linear-gradient(135deg, #9e7414 0%, #f5cf56 50%, #8a6209 100%);
             --equals-dot: #d4af37; --equals-color: #1a1300;
+            --grad-bg: linear-gradient(135deg, #9e7414 0%, #f5cf56 50%, #8a6209 100%);
+            --grad-text: #1a1300;
+            --grad-border: #ffd54f;
             --cursor-color: #ffd54f; --selection-bg: rgba(212, 175, 55, 0.32);
         }
         :root.light-theme[data-accent="gold"] {
-            --op-bg: #fcf4d9; --op-color: #7d5b08; --ac-color: #7d5b08;
+            --op-bg: linear-gradient(135deg, #9c7212 0%, #dfb63b 50%, #7d5806 100%);
+            --op-color: #ffffff; --ac-color: #7d5b08;
             --equals-bg: linear-gradient(135deg, #9c7212 0%, #dfb63b 50%, #7d5806 100%);
             --equals-dot: #b88a1c; --equals-color: #ffffff;
+            --grad-bg: linear-gradient(135deg, #9c7212 0%, #dfb63b 50%, #7d5806 100%);
+            --grad-text: #ffffff;
+            --grad-border: #9c7212;
             --cursor-color: #7d5b08; --selection-bg: rgba(184, 138, 28, 0.24);
+        }
+
+        :root[data-accent="aurora"] {
+            --op-bg: linear-gradient(135deg, #6200ea, #d500f9, #ff007f);
+            --op-color: #ffffff; --ac-color: #ff66b2;
+            --equals-bg: linear-gradient(135deg, #6200ea, #d500f9, #ff007f);
+            --equals-dot: #d500f9; --equals-color: #ffffff;
+            --grad-bg: linear-gradient(135deg, #6200ea, #d500f9, #ff007f);
+            --grad-text: #ffffff;
+            --grad-border: #ff4da6;
+            --cursor-color: #ff4da6; --selection-bg: rgba(213, 0, 249, 0.32);
+        }
+        :root.light-theme[data-accent="aurora"] {
+            --op-bg: linear-gradient(135deg, #6200ea, #d500f9, #ff007f);
+            --op-color: #ffffff; --ac-color: #aa00ff;
+            --equals-bg: linear-gradient(135deg, #6200ea, #d500f9, #ff007f);
+            --equals-dot: #d500f9; --equals-color: #ffffff;
+            --grad-bg: linear-gradient(135deg, #6200ea, #d500f9, #ff007f);
+            --grad-text: #ffffff;
+            --grad-border: #aa00ff;
+            --cursor-color: #aa00ff; --selection-bg: rgba(213, 0, 249, 0.24);
+        }
+
+        /* ============ EXTENSIÓN DE LOS 4 DEGRADADOS A TODA LA APP ============ */
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .op,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) button.land-btn.l-op {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+        }
+        :is(:root[data-accent="silver"], :root[data-accent="gold"]):not(.light-theme) .op,
+        :is(:root[data-accent="silver"], :root[data-accent="gold"]):not(.light-theme) button.land-btn.l-op {
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+        }
+
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) button.mem-btn,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) button.sci-btn,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) button.land-btn.l-sci {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            font-weight: 600;
+            border: 1.5px solid rgba(255, 255, 255, 0.18);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+        }
+        :is(:root[data-accent="silver"], :root[data-accent="gold"]):not(.light-theme) button.mem-btn,
+        :is(:root[data-accent="silver"], :root[data-accent="gold"]):not(.light-theme) button.sci-btn,
+        :is(:root[data-accent="silver"], :root[data-accent="gold"]):not(.light-theme) button.land-btn.l-sci {
+            border-color: rgba(0, 0, 0, 0.18);
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) button.sci-btn.active-mode,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) button.land-btn.l-sci.active-mode {
+            border-color: var(--swatch-border);
+            box-shadow: 0 0 12px var(--selection-bg);
+            filter: brightness(1.12);
+            font-weight: 800;
+        }
+
+        /* Botones de barra desplegable (Memoria, Tubo de ensayo, Conversor) y retroceso horizontal */
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .sci-toggle-btn.active-mem-bar,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .pro-sci-icon-btn.active-sci-panel {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            box-shadow: 0 3px 10px var(--selection-bg);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .pro-horiz-backspace {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            border-color: var(--grad-border);
+            font-weight: 700;
+        }
+
+        /* Etiquetas PRO, Rad, Deg, S⇔D e indicador M */
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .pro-badge-indicator,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .accent-active-tag,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .pro-sub-pill.on,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .calculator.pro-open .pro-status-pill {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            font-weight: 800;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .top-angle-btn {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            border-color: var(--grad-border);
+            font-weight: 700;
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .top-angle-btn.active-mode {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            border-color: var(--swatch-border);
+            box-shadow: 0 0 10px var(--selection-bg);
+            font-weight: 800;
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .mem-indicator,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .mem-indicator-value,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .history-date-group {
+            color: var(--grad-border);
+        }
+
+        /* Botón Borrar historial y botones de acción en modales */
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .btn-clear-history,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .calculator.pro-open .btn-clear-history,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .modal-btn.primary,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-nav-btn.next-pill,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-nav-btn.next-pill.pro-pill,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .frac-count-btn:not(.remove-btn),
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .frac-op-btn.active {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            border-color: var(--grad-border);
+            font-weight: 700;
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-nav-btn:not(.next-pill),
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-back {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            font-weight: 700;
+        }
+
+        /* Libros de Ayuda (tarjetas, portadas, insignias y páginas internas) */
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card.pro-book-card {
+            border-color: var(--grad-border);
+            box-shadow: 0 4px 14px var(--selection-bg);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card:hover,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card.pro-book-card:hover {
+            border-color: var(--swatch-border);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-cover,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card.pro-book-card .help-book-cover,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-num,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card.pro-book-card .help-book-num,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-page-emblem,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-page-emblem.pro-emblem,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .subalbum-progress-pill,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .stamp-counter-pill,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) :root.light-theme .stamp-counter-pill {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            border-color: var(--grad-border);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-tag,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card.pro-book-card .help-book-tag,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-arrow,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-book-card.pro-book-card .help-book-arrow,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .help-title-icon {
+            color: var(--grad-border);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-page-card,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-page-card.pro-page-card,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .stamp-showcase-card:not(.locked) {
+            border-color: var(--grad-border);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-dot.active,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .book-dot.pro-dot.active {
+            background: var(--grad-bg);
+        }
+
+        /* Conversor de Unidades (selector, badges, botones de acción, invertir, teclado y bordes activos) */
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_dropdown:not(.conv_unit_dropdown) .conv_dropdown_trigger,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_unit_symbol_badge,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_swap_btn,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_action_btn:not(.conv_clear_btn),
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_key_fn,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_dropdown_option.selected {
+            background: var(--grad-bg);
+            color: var(--grad-text);
+            border-color: var(--grad-border);
+            font-weight: 700;
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_dropdown:not(.conv_unit_dropdown) .conv_cat_icon,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_dropdown:not(.conv_unit_dropdown) .conv_dropdown_arrow,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_dropdown_option.selected .conv_cat_icon,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_dropdown_option.selected .conv_option_sym {
+            color: var(--grad-text);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_card,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_dropdown_menu {
+            border-color: var(--grad-border);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_unit_dropdown .conv_dropdown_trigger:hover,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_unit_dropdown.open .conv_dropdown_trigger,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_input:focus {
+            border-color: var(--grad-border);
+        }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_tag,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_output_box,
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .conv_unit_dropdown .conv_dropdown_arrow {
+            color: var(--grad-border);
         }
 
         /* ============ BASE ============ */
@@ -1622,6 +1839,9 @@
         .color-section-title.pro-section-title {
             color: var(--pro-mode-color);
         }
+        :is(:root[data-accent="copper"], :root[data-accent="silver"], :root[data-accent="gold"], :root[data-accent="aurora"]) .color-section-title:not(.pro-section-title) {
+    color: var(--grad-border);
+        }
         .color-grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1675,9 +1895,13 @@
         .color-swatch.metallic-gold {
             background: linear-gradient(135deg, #8a6209 0%, #f5cf56 50%, #9e7414 100%);
         }
+        .color-swatch.metallic-aurora {
+            background: linear-gradient(135deg, #6200ea, #d500f9, #ff007f);
+        }
         .color-swatch.metallic-copper svg,
         .color-swatch.metallic-silver svg,
-        .color-swatch.metallic-gold svg {
+        .color-swatch.metallic-gold svg,
+        .color-swatch.metallic-aurora svg {
             filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
         }
 
@@ -2290,7 +2514,7 @@
             font-size: clamp(1.1rem, 2.3vw, 1.35rem);
         }
         button.land-btn.l-eq {
-            background-color: var(--equals-bg);
+            background: var(--equals-bg);
             color: var(--equals-color);
             font-size: clamp(1.3rem, 2.8vw, 1.65rem);
             font-weight: var(--equals-weight);
@@ -2494,6 +2718,14 @@
             <span>Texto en negrita</span>
             <span class="pro-sub-pill on" id="proBoldPill">ON</span>
         </button>
+                    <button class="menu-item pro-sub-option" id="hapticMenuBtn" role="menuitem" onclick="toggleHaptic();">
+                <svg viewBox="0 0 24 24">
+                    <path d="M0 15h2V9H0v6zm3 2h2V7H3v10zm19-8v6h2V9h-2zm-3 8h2V7h-2v10zM16.5 3h-9C6.67 3 6 3.67 6 4.5v15c0 .83.67 1.5 1.5 1.5h9c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5zM16 19H8V5h8v14z"/>
+                </svg>
+                <span>Vibración de teclas</span>
+                <span class="pro-sub-pill on" id="proHapticPill">ON</span>
+            </button>
+
         <div class="menu-divider"></div>
         <button class="menu-item" role="menuitem" onclick="openModal('privacy'); closeMenu();">
             <svg viewBox="0 0 24 24">
@@ -3146,7 +3378,8 @@
         { id: 'lime',    name: 'Lima',      hex: '#c0ca33' },
         { id: 'copper',  name: 'Cobre',     metallicClass: 'metallic-copper' },
         { id: 'silver',  name: 'Plata',     metallicClass: 'metallic-silver' },
-        { id: 'gold',    name: 'Dorado',    metallicClass: 'metallic-gold' }
+        { id: 'gold',    name: 'Dorado',    metallicClass: 'metallic-gold' },
+        { id: 'aurora',  name: 'Aurora',    metallicClass: 'metallic-aurora' }
     ];
 
     const ACCENT_PALETTE = [...EARNED_ACCENT_PALETTE, ...PRO_ACCENT_PALETTE];
@@ -3587,16 +3820,16 @@
                 },
                 {
                     emblem: '⋮',
-                    title: 'Menú de Opciones (⋮)',
-                    desc: '¿Qué es? El panel de ajustes y herramientas. ¿Cómo funciona? Pulsa ⋮ arriba a la derecha para activar Calculadora Pro, revisar Privacidad, enviar Comentarios o abrir Ayuda.',
+                    title: 'Menú de Opciones y Colores Ganados',
+                    desc: '¿Qué es? El panel de ajustes, tema y recompensas. ¿Cómo funciona? En ⋮ → Color del teclado dispones de 4 colores desbloqueables sin Pro (Original, Azul, Púrpura y Coral) al completar cada álbum de la Colección.',
                     diagram: `
-                        <svg viewBox="0 0 280 50" aria-label="Opciones del menú de tres puntos">
-                            <rect x="6" y="8" width="128" height="34" rx="9" fill="var(--pro-mode-badge-bg)" stroke="var(--pro-mode-color)" stroke-width="1.1"/>
-                            <text x="70" y="29" text-anchor="middle" fill="var(--pro-mode-color)" font-size="11.5" font-weight="700">★ Calculadora Pro</text>
-                            <rect x="142" y="8" width="132" height="34" rx="9" fill="var(--num-bg)" stroke="var(--op-color)" stroke-opacity="0.35"/>
-                            <text x="208" y="29" text-anchor="middle" fill="var(--text-color)" font-size="11" font-weight="700">Privacidad · Ayuda</text>
+                        <svg viewBox="0 0 280 50" aria-label="4 colores ganados completando álbumes">
+                            <circle cx="42" cy="25" r="12" fill="#f1c40f"/>
+                            <circle cx="106" cy="25" r="12" fill="#2979ff"/>
+                            <circle cx="170" cy="25" r="12" fill="#9c27b0"/>
+                            <circle cx="234" cy="25" r="12" fill="#ff5c5c"/>
                         </svg>`,
-                    steps: 'Pulsa <kbd>⋮</kbd> arriba a la derecha para desplegar las opciones'
+                    steps: 'Completa los álbumes de <kbd>Libro 0</kbd> para desbloquear <kbd>Azul</kbd>, <kbd>Púrpura</kbd> y <kbd>Coral</kbd>'
                 }
             ]
         },
@@ -3680,33 +3913,52 @@
                 {
                     emblemSvg: '<svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>',
                     emblemClass: 'pro-emblem',
-                    title: 'Paleta de 12 Colores del Teclado',
-                    desc: '¿Qué es? Personalización visual exclusiva de Pro. ¿Cómo funciona? Abre ⋮ → Color del teclado, elige uno de los 12 acentos y pulsa Aceptar para teñir operadores, cursor y =.',
+                    title: '16 Colores y Degradados Metálicos',
+                    desc: '¿Qué es? Personalización completa de teclado. ¿Cómo funciona? Combina los 4 colores ganados por álbumes (Original, Azul, Púrpura, Coral) con los 12 exclusivos Pro: 8 sólidos y 4 degradados (Cobre, Plata, Dorado y Aurora).',
                     diagram: `
-                        <svg viewBox="0 0 280 52" aria-label="Paleta de colores Pro">
-                            <circle cx="28" cy="26" r="13" fill="#2979ff"/>
-                            <circle cx="64" cy="26" r="13" fill="#ff9800"/>
-                            <circle cx="100" cy="26" r="13" fill="#9c27b0"/>
-                            <circle cx="136" cy="26" r="13" fill="#1db978"/>
-                            <circle cx="172" cy="26" r="13" fill="#00e5ff"/>
-                            <circle cx="208" cy="26" r="13" fill="#ec407a"/>
-                            <circle cx="244" cy="26" r="13" fill="#39e519"/>
+                        <svg viewBox="0 0 280 54" aria-label="Paleta de colores Pro y degradados metálicos">
+                            <defs>
+                                <linearGradient id="helpGradCopper" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#7a3b1a"/><stop offset="50%" stop-color="#e69d73"/><stop offset="100%" stop-color="#8c4a27"/>
+                                </linearGradient>
+                                <linearGradient id="helpGradSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#636973"/><stop offset="50%" stop-color="#e2e6ec"/><stop offset="100%" stop-color="#757c85"/>
+                                </linearGradient>
+                                <linearGradient id="helpGradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#8a6209"/><stop offset="50%" stop-color="#f5cf56"/><stop offset="100%" stop-color="#9e7414"/>
+                                </linearGradient>
+                                <linearGradient id="helpGradAurora" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6200ea"/><stop offset="50%" stop-color="#d500f9"/><stop offset="100%" stop-color="#ff007f"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="22" cy="27" r="10" fill="#ff9800"/>
+                            <circle cx="48" cy="27" r="10" fill="#1db978"/>
+                            <circle cx="74" cy="27" r="10" fill="#29b6f6"/>
+                            <circle cx="100" cy="27" r="10" fill="#00e5ff"/>
+                            <circle cx="126" cy="27" r="10" fill="#ec407a"/>
+                            <circle cx="152" cy="27" r="10" fill="#39e519"/>
+                            <circle cx="182" cy="27" r="11" fill="url(#helpGradCopper)"/>
+                            <circle cx="209" cy="27" r="11" fill="url(#helpGradSilver)"/>
+                            <circle cx="236" cy="27" r="11" fill="url(#helpGradGold)"/>
+                            <circle cx="262" cy="27" r="11" fill="url(#helpGradAurora)"/>
                         </svg>`,
                     steps: 'Ruta: <kbd>⋮</kbd> → <kbd>Color del teclado</kbd> → <kbd>Aceptar</kbd>'
                 },
                 {
                     emblem: 'B',
                     emblemClass: 'pro-emblem',
-                    title: 'Texto en Negrita y Sonido de Teclas',
-                    desc: '¿Qué son? Mejoras de legibilidad y respuesta táctil. ¿Cómo funcionan? En ⋮ activa o desactiva Texto en negrita para engrosar los números y Sonido de teclas para respuesta acústica.',
+                    title: 'Negrita, Sonido y Vibración de Teclas',
+                    desc: '¿Qué son? Controles sensoriales y visuales exclusivos de Pro. ¿Cómo funcionan? En el menú ⋮ puedes activar o desactivar Texto en negrita, Sonido de teclas y Vibración de teclas de forma independiente.',
                     diagram: `
-                        <svg viewBox="0 0 280 48" aria-label="Texto en negrita ON y OFF">
-                            <rect x="6" y="7" width="124" height="34" rx="9" fill="var(--num-bg)" stroke="var(--op-color)" stroke-opacity="0.35"/>
-                            <text x="68" y="29" text-anchor="middle" fill="var(--preview-color)" font-size="13" font-weight="400">OFF: 1,234.50</text>
-                            <rect x="148" y="7" width="126" height="34" rx="9" fill="var(--op-bg)" stroke="var(--op-color)" stroke-width="1.2"/>
-                            <text x="211" y="29" text-anchor="middle" fill="var(--op-color)" font-size="13.5" font-weight="800">ON: 1,234.50</text>
+                        <svg viewBox="0 0 280 50" aria-label="Negrita sonido y vibración de teclas">
+                            <rect x="4" y="8" width="86" height="34" rx="9" fill="var(--num-bg)" stroke="var(--op-color)" stroke-opacity="0.35"/>
+                            <text x="47" y="29" text-anchor="middle" fill="var(--text-color)" font-size="11" font-weight="800">Negrita ON</text>
+                            <rect x="97" y="8" width="86" height="34" rx="9" fill="var(--op-bg)" stroke="var(--op-color)" stroke-width="1.1"/>
+                            <text x="140" y="29" text-anchor="middle" fill="var(--op-color)" font-size="11" font-weight="700">Sonido ON</text>
+                            <rect x="190" y="8" width="86" height="34" rx="9" fill="var(--pro-mode-badge-bg)" stroke="var(--pro-mode-color)" stroke-width="1.1"/>
+                            <text x="233" y="29" text-anchor="middle" fill="var(--pro-mode-color)" font-size="10.8" font-weight="700">Vibrar ON</text>
                         </svg>`,
-                    steps: 'Alterna <kbd>Texto en negrita</kbd> y <kbd>Sonido de teclas</kbd> desde <kbd>⋮</kbd>'
+                    steps: 'Configura <kbd>Negrita</kbd>, <kbd>Sonido</kbd> y <kbd>Vibración</kbd> desde <kbd>⋮</kbd>'
                 }
             ]
         },
@@ -4940,7 +5192,7 @@
                 <div class="help-book-info">
                     <span class="help-book-tag">Libro 6 · Exclusivo Pro</span>
                     <div class="help-book-title">Personalización y Colores Pro</div>
-                    <div class="help-book-sub">12 colores de teclado, texto en negrita y sonido táctil.</div>
+                    <div class="help-book-sub">8 colores + 4 degradados metálicos, negrita, sonido y vibración.</div>
                 </div>
                 <span class="help-book-arrow">›</span>
             </button>
@@ -4962,19 +5214,6 @@
         modalBody.innerHTML = `
             <p class="help-intro">Toca un libro para explorar sus páginas con ejemplos:</p>
             <div class="help-books-shelf">
-                <button type="button" class="help-book-card pro-book-card" onclick="openCollectionSubAlbumsMenu()">
-                    <div class="help-book-cover">
-                        <span class="help-book-num">0</span>
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
-                    </div>
-                    <div class="help-book-info">
-                        <span class="help-book-tag">Libro 0 · Colección (${totalUnlocked}/${totalStamps})</span>
-                        <div class="help-book-title">Colección</div>
-                        <div class="help-book-sub">3 álbumes de estampitas y secretos matemáticos por descubrir.</div>
-                    </div>
-                    <span class="help-book-arrow">›</span>
-                </button>
-
                 <button type="button" class="help-book-card" onclick="openHelpBook('essentials')">
                     <div class="help-book-cover">
                         <span class="help-book-num">1</span>
@@ -5021,8 +5260,8 @@
                     </div>
                     <div class="help-book-info">
                         <span class="help-book-tag">Libro 4 · Utilidades</span>
-                        <div class="help-book-title">Pantalla, Historial y Temas</div>
-                        <div class="help-book-sub">Cursor editable, historial por fechas, modo claro/oscuro y menú.</div>
+                        <div class="help-book-title">Pantalla, Historial y Colores</div>
+                        <div class="help-book-sub">Cursor editable, historial por fechas, temas y 4 colores por álbum.</div>
                     </div>
                     <span class="help-book-arrow">›</span>
                 </button>
@@ -5041,6 +5280,19 @@
                 </button>
 
                 ${proBooksHtml}
+
+                <button type="button" class="help-book-card pro-book-card" onclick="openCollectionSubAlbumsMenu()">
+                    <div class="help-book-cover">
+                        <span class="help-book-num">0</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+                    </div>
+                    <div class="help-book-info">
+                        <span class="help-book-tag">Libro 0 · Colección (${totalUnlocked}/${totalStamps})</span>
+                        <div class="help-book-title">Colección</div>
+                        <div class="help-book-sub">3 álbumes de estampitas que desbloquean colores para el teclado.</div>
+                    </div>
+                    <span class="help-book-arrow">›</span>
+                </button>
             </div>
         `;
         modalActions.innerHTML = `<button class="modal-btn primary" onclick="closeModal()">Cerrar</button>`;
@@ -7494,6 +7746,44 @@
         try { document.execCommand('copy'); } catch {}
         document.body.removeChild(ta);
     }
+
+    // Vibración háptica suave al tocar teclas
+let hapticEnabled = localStorage.getItem('calc_haptic') !== 'false'; // Activado por defecto
+
+function triggerHaptic(ms = 10) {
+    if (hapticEnabled && navigator.vibrate) {
+        navigator.vibrate(ms);
+    }
+}
+
+document.addEventListener('pointerdown', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn || btn.disabled) return;
+
+    // Vibración ligeramente más marcada para '=' o 'AC', suave para el resto
+    if (btn.classList.contains('equals') || btn.classList.contains('l-eq') || btn.classList.contains('ac') || btn.classList.contains('l-ac')) {
+        triggerHaptic(18);
+    } else {
+        triggerHaptic(10);
+    }
+});
+function updateHapticUI() {
+    const pill = document.getElementById('proHapticPill');
+    if (pill) {
+        pill.textContent = hapticEnabled ? 'ON' : 'OFF';
+        pill.classList.toggle('on', hapticEnabled);
+    }
+}
+
+function toggleHaptic() {
+    hapticEnabled = !hapticEnabled;
+    localStorage.setItem('calc_haptic', hapticEnabled);
+    updateHapticUI();
+    if (hapticEnabled) triggerHaptic(15);
+}
+
+updateHapticUI();
+
 </script>
 
 </body>
