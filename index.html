@@ -216,6 +216,45 @@
             --cursor-color: #827717; --selection-bg: rgba(175, 180, 43, 0.24);
         }
 
+        :root[data-accent="copper"] {
+            --op-bg: #362015; --op-color: #e69d73; --ac-color: #e69d73;
+            --equals-bg: linear-gradient(135deg, #8c4a27 0%, #e09165 50%, #7a3b1a 100%);
+            --equals-dot: #c87544; --equals-color: #ffffff;
+            --cursor-color: #e69d73; --selection-bg: rgba(200, 117, 68, 0.32);
+        }
+        :root.light-theme[data-accent="copper"] {
+            --op-bg: #faece3; --op-color: #8f4820; --ac-color: #8f4820;
+            --equals-bg: linear-gradient(135deg, #9c522b 0%, #d48255 50%, #7d3d1b 100%);
+            --equals-dot: #b86638; --equals-color: #ffffff;
+            --cursor-color: #8f4820; --selection-bg: rgba(184, 102, 56, 0.24);
+        }
+
+        :root[data-accent="silver"] {
+            --op-bg: #25282e; --op-color: #d8dee9; --ac-color: #d8dee9;
+            --equals-bg: linear-gradient(135deg, #757c85 0%, #e2e6ec 50%, #636973 100%);
+            --equals-dot: #b0b7c2; --equals-color: #141619;
+            --cursor-color: #d8dee9; --selection-bg: rgba(176, 183, 194, 0.32);
+        }
+        :root.light-theme[data-accent="silver"] {
+            --op-bg: #eceef2; --op-color: #3f4652; --ac-color: #3f4652;
+            --equals-bg: linear-gradient(135deg, #68707a 0%, #c4cbd4 50%, #525861 100%);
+            --equals-dot: #8c94a0; --equals-color: #ffffff;
+            --cursor-color: #3f4652; --selection-bg: rgba(104, 112, 122, 0.24);
+        }
+
+        :root[data-accent="gold"] {
+            --op-bg: #362b10; --op-color: #ffd54f; --ac-color: #ffd54f;
+            --equals-bg: linear-gradient(135deg, #9e7414 0%, #f5cf56 50%, #8a6209 100%);
+            --equals-dot: #d4af37; --equals-color: #1a1300;
+            --cursor-color: #ffd54f; --selection-bg: rgba(212, 175, 55, 0.32);
+        }
+        :root.light-theme[data-accent="gold"] {
+            --op-bg: #fcf4d9; --op-color: #7d5b08; --ac-color: #7d5b08;
+            --equals-bg: linear-gradient(135deg, #9c7212 0%, #dfb63b 50%, #7d5806 100%);
+            --equals-dot: #b88a1c; --equals-color: #ffffff;
+            --cursor-color: #7d5b08; --selection-bg: rgba(184, 138, 28, 0.24);
+        }
+
         /* ============ BASE ============ */
         * {
             box-sizing: border-box;
@@ -419,13 +458,20 @@
         .menu-item.pro-option svg {
             opacity: 1;
         }
-        .menu-item.accent-option,
+        .menu-item.accent-option {
+            display: flex;
+            color: var(--text-color);
+            font-weight: var(--body-weight);
+        }
+        .calculator.pro-open .menu-item.accent-option {
+            color: var(--pro-mode-color);
+            font-weight: 600;
+        }
         .menu-item.pro-sub-option {
             display: none;
             color: var(--pro-mode-color);
             font-weight: 600;
         }
-        .calculator.pro-open .menu-item.accent-option,
         .calculator.pro-open .menu-item.pro-sub-option {
             display: flex;
         }
@@ -462,6 +508,7 @@
             font-weight: 700;
         }
         .accent-active-tag {
+            display: none;
             margin-left: auto;
             font-size: 0.7rem;
             font-weight: 700;
@@ -471,14 +518,20 @@
             color: var(--pro-mode-color);
             letter-spacing: 0.4px;
         }
+        .calculator.pro-open .accent-active-tag {
+            display: inline-block;
+        }
         .accent-dot-preview {
-            margin-left: 6px;
+            margin-left: auto;
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background-color: var(--equals-bg);
+            background: var(--equals-bg);
             border: 2px solid rgba(142, 142, 147, 0.35);
             flex-shrink: 0;
+        }
+        .calculator.pro-open .accent-dot-preview {
+            margin-left: 6px;
         }
         .menu-divider {
             height: 1px;
@@ -1547,6 +1600,86 @@
             color: var(--text-color);
             font-weight: 600;
         }
+        .color-section-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .color-section-group:last-of-type {
+            margin-bottom: 4px;
+        }
+        .color-section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            color: var(--op-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2px;
+        }
+        .color-section-title.pro-section-title {
+            color: var(--pro-mode-color);
+        }
+        .color-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px 8px;
+            padding: 2px 2px;
+            justify-items: center;
+        }
+        .color-swatch-item.locked {
+            opacity: 0.62;
+        }
+        .color-swatch-item.locked .color-swatch {
+            filter: grayscale(0.45);
+            border-color: rgba(142, 142, 147, 0.35);
+        }
+        .color-lock-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background-color: var(--menu-bg);
+            border: 1.5px solid rgba(142, 142, 147, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+        }
+        .color-lock-badge svg {
+            width: 11px !important;
+            height: 11px !important;
+            fill: var(--text-color) !important;
+            opacity: 0.9 !important;
+            transform: none !important;
+        }
+        .color-unlock-notice {
+            min-height: 18px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--op-color);
+            text-align: center;
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+        .color-swatch.metallic-copper {
+            background: linear-gradient(135deg, #7a3b1a 0%, #e69d73 50%, #8c4a27 100%);
+        }
+        .color-swatch.metallic-silver {
+            background: linear-gradient(135deg, #636973 0%, #e2e6ec 50%, #757c85 100%);
+        }
+        .color-swatch.metallic-gold {
+            background: linear-gradient(135deg, #8a6209 0%, #f5cf56 50%, #9e7414 100%);
+        }
+        .color-swatch.metallic-copper svg,
+        .color-swatch.metallic-silver svg,
+        .color-swatch.metallic-gold svg {
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
+        }
 
         .feedback-textarea {
             width: 100%;
@@ -2053,7 +2186,7 @@
         .num    { background-color: var(--num-bg);    color: var(--num-color); font-weight: var(--btn-weight); }
         .op     { background-color: var(--op-bg);     color: var(--op-color);  font-size: clamp(1.95rem, 7.5vw, 2.55rem); font-weight: var(--btn-weight); }
         .ac     { background-color: var(--ac-bg);     color: var(--ac-color);  font-size: clamp(1.55rem, 6vw, 2.05rem); font-weight: var(--btn-weight); }
-        .equals { background-color: var(--equals-bg); color: var(--equals-color); font-size: clamp(2.1rem, 8vw, 2.7rem); font-weight: var(--equals-weight); }
+        .equals { background: var(--equals-bg); color: var(--equals-color); font-size: clamp(2.1rem, 8vw, 2.7rem); font-weight: var(--equals-weight); }
 
         /* ============ CALCULADORA CIENTÍFICA HORIZONTAL (MODO PRO + TUBO DE ENSAYO) ============ */
         .pro-landscape-keypad {
@@ -2995,20 +3128,48 @@
     ];
     let fractionOps = ['+', '+', '+'];
 
-    const ACCENT_PALETTE = [
-        { id: 'default', name: 'Original',  hex: 'default' },
-        { id: 'blue',    name: 'Azul',      hex: '#2979ff' },
+    const EARNED_ACCENT_PALETTE = [
+        { id: 'default', name: 'Original', hex: 'default', albumId: null,       albumLabel: '' },
+        { id: 'blue',    name: 'Azul',     hex: '#2979ff', albumId: 'cotidiano', albumLabel: 'Álbum 1: Uso Cotidiano (9/9)' },
+        { id: 'purple',  name: 'Púrpura',  hex: '#9c27b0', albumId: 'avanzado',  albumLabel: 'Álbum 2: Uso Avanzado (5/5)' },
+        { id: 'coral',   name: 'Coral',    hex: '#ff5c5c', albumId: 'secretos',  albumLabel: 'Álbum 3: Secretos Ocultos (5/5)' }
+    ];
+
+    const PRO_ACCENT_PALETTE = [
         { id: 'amber',   name: 'Ámbar',     hex: '#ff9800' },
-        { id: 'purple',  name: 'Púrpura',   hex: '#9c27b0' },
         { id: 'emerald', name: 'Esmeralda', hex: '#1db978' },
         { id: 'sky',     name: 'Celeste',   hex: '#29b6f6' },
-        { id: 'coral',   name: 'Coral',     hex: '#ff5c5c' },
         { id: 'cyan',    name: 'Cian',      hex: '#00e5ff' },
         { id: 'rose',    name: 'Rosa',      hex: '#ec407a' },
         { id: 'red',     name: 'Rojo',      hex: '#e53935' },
         { id: 'neon',    name: 'Neón',      hex: '#39e519' },
-        { id: 'lime',    name: 'Lima',      hex: '#c0ca33' }
+        { id: 'lime',    name: 'Lima',      hex: '#c0ca33' },
+        { id: 'copper',  name: 'Cobre',     metallicClass: 'metallic-copper' },
+        { id: 'silver',  name: 'Plata',     metallicClass: 'metallic-silver' },
+        { id: 'gold',    name: 'Dorado',    metallicClass: 'metallic-gold' }
     ];
+
+    const ACCENT_PALETTE = [...EARNED_ACCENT_PALETTE, ...PRO_ACCENT_PALETTE];
+
+    function isEarnedColorUnlocked(colorObj) {
+        if (!colorObj || !colorObj.albumId) return true;
+        const subAlbum = STAMP_SUBALBUMS.find(s => s.id === colorObj.albumId);
+        if (!subAlbum || !Array.isArray(subAlbum.stamps)) return false;
+        return subAlbum.stamps.every(st => unlockedStamps.includes(st.id));
+    }
+
+    function isAccentCurrentlyAvailable(accentId) {
+        if (!accentId || accentId === 'default') return true;
+        const earnedObj = EARNED_ACCENT_PALETTE.find(c => c.id === accentId);
+        if (earnedObj) {
+            return isEarnedColorUnlocked(earnedObj);
+        }
+        const proObj = PRO_ACCENT_PALETTE.find(c => c.id === accentId);
+        if (proObj) {
+            return Boolean(isPro);
+        }
+        return false;
+    }
 
     /* Configuración de las 2 pantallas del teclado científico horizontal PRO */
     const LANDSCAPE_SLOTS = {
@@ -3704,8 +3865,16 @@
             syncProFeaturesUI();
             updateProStatusPill();
 
+            const savedStampsInit = localStorage.getItem('calcUnlockedStamps');
+            if (savedStampsInit) {
+                const parsedStampsInit = JSON.parse(savedStampsInit);
+                if (Array.isArray(parsedStampsInit)) {
+                    const validIdsInit = new Set(ALL_STAMP_ACHIEVEMENTS.map(s => s.id));
+                    unlockedStamps = parsedStampsInit.filter(id => typeof id === 'string' && validIdsInit.has(id));
+                }
+            }
             const savedAccent = localStorage.getItem('calcKeyAccent');
-            if (isPro && savedAccent && ACCENT_PALETTE.some(c => c.id === savedAccent)) {
+            if (savedAccent && isAccentCurrentlyAvailable(savedAccent)) {
                 applyKeyAccent(savedAccent, false);
             }
             const saved = localStorage.getItem('calcHistory');
@@ -4052,13 +4221,15 @@
         updateProStatusPill();
 
         if (!isPro) {
-            if (currentAccent !== 'default') {
+            if (!isAccentCurrentlyAvailable(currentAccent)) {
                 applyKeyAccent('default', false);
             }
         } else {
             try {
                 const savedAccent = localStorage.getItem('calcKeyAccent') || 'default';
-                applyKeyAccent(savedAccent, false);
+                if (isAccentCurrentlyAvailable(savedAccent)) {
+                    applyKeyAccent(savedAccent, false);
+                }
             } catch {}
         }
         syncScientificLayout();
@@ -4242,6 +4413,21 @@
     }
 
     function selectAccentSwatch(accentId) {
+        const noticeEl = document.getElementById('colorUnlockNotice');
+        const earnedObj = EARNED_ACCENT_PALETTE.find(c => c.id === accentId);
+
+        if (earnedObj && !isEarnedColorUnlocked(earnedObj)) {
+            if (noticeEl) {
+                noticeEl.textContent = `Completa el ${earnedObj.albumLabel} para desbloquear ${earnedObj.name}.`;
+            }
+            haptic();
+            return;
+        }
+
+        if (noticeEl) {
+            noticeEl.textContent = '';
+        }
+
         tempSelectedAccent = accentId;
         document.querySelectorAll('.color-swatch-item').forEach(btn => {
             btn.classList.toggle('selected', btn.dataset.accentId === accentId);
@@ -4626,29 +4812,76 @@
         } else if (type === 'colors') {
             tempSelectedAccent = currentAccent;
             modalTitle.textContent = 'Color del teclado';
-            const swatchesHtml = ACCENT_PALETTE.map(c => {
-                const isSelected = c.id === currentAccent ? 'selected' : '';
+
+            const lockSvg = `<span class="color-lock-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></span>`;
+
+            const earnedUnlockedCount = EARNED_ACCENT_PALETTE.filter(c => isEarnedColorUnlocked(c)).length;
+            const earnedSwatchesHtml = EARNED_ACCENT_PALETTE.map(c => {
+                const unlocked = isEarnedColorUnlocked(c);
+                const isSelected = (unlocked && c.id === currentAccent) ? 'selected' : '';
+                const lockedClass = unlocked ? '' : 'locked';
                 const bgStyle = c.hex === 'default' ? '' : `style="background-color:${c.hex};"`;
                 const extraClass = c.hex === 'default' ? 'default-swatch' : '';
                 return `
                     <button type="button"
-                            class="color-swatch-item ${isSelected}"
+                            class="color-swatch-item ${isSelected} ${lockedClass}"
                             data-accent-id="${c.id}"
                             onclick="selectAccentSwatch('${c.id}')"
-                            aria-label="Color ${c.name}">
+                            aria-label="Color ${c.name}${unlocked ? '' : ' (Bloqueado)'}">
                         <span class="color-swatch ${extraClass}" ${bgStyle}>
                             <svg viewBox="0 0 24 24">
                                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                             </svg>
+                            ${unlocked ? '' : lockSvg}
                         </span>
                         <span class="swatch-label">${c.name}</span>
                     </button>
                 `;
             }).join('');
 
+            let proSectionHtml = '';
+            if (isPro) {
+                const proSwatchesHtml = PRO_ACCENT_PALETTE.map(c => {
+                    const isSelected = c.id === currentAccent ? 'selected' : '';
+                    const bgStyle = c.metallicClass ? '' : `style="background-color:${c.hex};"`;
+                    const extraClass = c.metallicClass ? c.metallicClass : '';
+                    return `
+                        <button type="button"
+                                class="color-swatch-item ${isSelected}"
+                                data-accent-id="${c.id}"
+                                onclick="selectAccentSwatch('${c.id}')"
+                                aria-label="Color ${c.name}">
+                            <span class="color-swatch ${extraClass}" ${bgStyle}>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </span>
+                            <span class="swatch-label">${c.name}</span>
+                        </button>
+                    `;
+                }).join('');
+
+                proSectionHtml = `
+                    <div class="color-section-group">
+                        <div class="color-section-title pro-section-title">
+                            <span>Colores Pro</span>
+                            <span>${PRO_ACCENT_PALETTE.length} disponibles</span>
+                        </div>
+                        <div class="color-grid-4">${proSwatchesHtml}</div>
+                    </div>
+                `;
+            }
+
             modalBody.innerHTML = `
-                <p style="margin-bottom:12px;">Elige un tono de acento para las teclas y botones principales:</p>
-                <div class="color-grid-3x4">${swatchesHtml}</div>
+                <div class="color-section-group">
+                    <div class="color-section-title">
+                        <span>Colores ganados</span>
+                        <span>${earnedUnlockedCount}/${EARNED_ACCENT_PALETTE.length}</span>
+                    </div>
+                    <div class="color-grid-4">${earnedSwatchesHtml}</div>
+                </div>
+                ${proSectionHtml}
+                <div class="color-unlock-notice" id="colorUnlockNotice" role="status" aria-live="polite"></div>
             `;
             modalActions.innerHTML = `
                 <button class="modal-btn" onclick="cancelColorSelection()">Cancelar</button>
@@ -5107,10 +5340,12 @@
     }
 
     function cancelColorSelection() {
-        applyKeyAccent(tempSelectedAccent, false);
+        applyKeyAccent('default', false);
         try {
             const savedAccent = localStorage.getItem('calcKeyAccent') || 'default';
-            applyKeyAccent(savedAccent, false);
+            if (isAccentCurrentlyAvailable(savedAccent)) {
+                applyKeyAccent(savedAccent, false);
+            }
         } catch {}
         closeModal();
     }
