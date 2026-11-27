@@ -3149,7 +3149,7 @@
 
     /* Constante de producto de Google Play Billing */
     const GPLAY_PRO_PRODUCT_ID = 'calculadora_lixfil_pro_lifetime';
-    const GPLAY_PRO_PRICE_LABEL = '$2.99';
+    const GPLAY_PRO_PRICE_LABEL = '$0.99';
 
     /* Estado del lector interactivo de libros de Ayuda */
     let activeHelpBookId = null;
@@ -5122,7 +5122,7 @@
                         </svg>
                         <span>Google Play Billing</span>
                     </span>
-                    <span class="pro-secure-note">Pago único gestionado por Google Play. Acceso de por vida.</span>
+                    <span class="pro-secure-note">Pago único gestionado por Google Play.</span>
                 </div>
             `;
             modalActions.innerHTML = '';
@@ -6000,15 +6000,24 @@
             const peek = () => normalized[pos];
             const consume = () => normalized[pos++];
 
+            function isPercentageOfCurrent() {
+                const curr = peek();
+                const next = normalized[pos + 1];
+                return Boolean(curr && curr.type === 'num' && next && next.value === '%');
+            }
+
             function parseExpression() {
                 let left = parseTerm();
                 while (peek() && (peek().value === '+' || peek().value === '-')) {
                     const op = consume().value;
-                    const right = parseTerm();
-                    if (op === '+') {
-                        left = (peek() && peek().value === '%') ? (consume(), left + (left * right / 100)) : left + right;
+                    if (isPercentageOfCurrent()) {
+                        const pctNum = consume().value;
+                        consume();
+                        const delta = left * (pctNum / 100);
+                        left = (op === '+') ? left + delta : left - delta;
                     } else {
-                        left = (peek() && peek().value === '%') ? (consume(), left - (left * right / 100)) : left - right;
+                        const right = parseTerm();
+                        left = (op === '+') ? left + right : left - right;
                     }
                 }
                 return left;
@@ -7224,11 +7233,11 @@
             units: [
                 { id: 'bit', name: 'Bits',      symbol: 'bit', factor: 1 / 8 },
                 { id: 'B',   name: 'Bytes',     symbol: 'B',   factor: 1 },
-                { id: 'KB',  name: 'Kilobytes', symbol: 'KB',  factor: 1024 },
-                { id: 'MB',  name: 'Megabytes', symbol: 'MB',  factor: 1024 ** 2 },
-                { id: 'GB',  name: 'Gigabytes', symbol: 'GB',  factor: 1024 ** 3 },
-                { id: 'TB',  name: 'Terabytes', symbol: 'TB',  factor: 1024 ** 4 },
-                { id: 'PB',  name: 'Petabytes', symbol: 'PB',  factor: 1024 ** 5 }
+                { id: 'KB',  name: 'Kilobytes', symbol: 'KB',  factor: 1000 },
+                { id: 'MB',  name: 'Megabytes', symbol: 'MB',  factor: 1000 ** 2 },
+                { id: 'GB',  name: 'Gigabytes', symbol: 'GB',  factor: 1000 ** 3 },
+                { id: 'TB',  name: 'Terabytes', symbol: 'TB',  factor: 1000 ** 4 },
+                { id: 'PB',  name: 'Petabytes', symbol: 'PB',  factor: 1000 ** 5 }
             ]
         },
         numsys: {
@@ -7592,9 +7601,6 @@
                 return;
             }
             conv_outputEl.textContent = parsedInt.toString(toUnit.radix).toUpperCase();
-            if (typeof checkAndUnlockStamp === 'function') {
-                checkAndUnlockStamp('traductor_del_mundo');
-            }
             return;
         }
 
@@ -7619,12 +7625,12 @@
         }
 
         conv_outputEl.textContent = conv_formatNumber(converted);
-        if (typeof checkAndUnlockStamp === 'function') {
-            checkAndUnlockStamp('traductor_del_mundo');
-        }
     }
 
+    let conv_hasSwappedUnits = false;
+
     function conv_swapUnits() {
+        conv_hasSwappedUnits = true;
         const prevFrom = conv_fromUnitId;
         conv_fromUnitId = conv_toUnitId;
         conv_toUnitId   = prevFrom;
@@ -7654,12 +7660,15 @@
         if (!resultText) return;
 
         const showCopiedFeedback = () => {
-            const originalLabel = conv_copyBtnEl.textContent;
-            conv_copyBtnEl.textContent = '¡Copiado!';
-            setTimeout(() => {
-                conv_copyBtnEl.textContent = originalLabel;
-            }, 1300);
-        };
+            if (conv_hasSwappedUnits && typeof checkAndUnlockStamp === 'function') {
+            checkAndUnlockStamp('traductor_del_mundo');
+        }
+        const originalLabel = conv_copyBtnEl.textContent;
+        conv_copyBtnEl.textContent = '¡Copiado!';
+        setTimeout(() => {
+            conv_copyBtnEl.textContent = originalLabel;
+        }, 1300);
+    };
 
         if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
             navigator.clipboard.writeText(resultText).then(showCopiedFeedback).catch(() => {
