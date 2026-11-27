@@ -150,15 +150,15 @@
             --cursor-color: #0288d1; --selection-bg: rgba(41, 182, 246, 0.22);
         }
 
-        :root[data-accent="coral"] {
-            --op-bg: #3b1c1c; --op-color: #ff7b7b; --ac-color: #ff7b7b;
-            --equals-bg: #ff5c5c; --equals-color: #ffffff;
-            --cursor-color: #ff7b7b; --selection-bg: rgba(255, 92, 92, 0.32);
+        :root[data-accent="beige"] {
+            --op-bg: #362e23; --op-color: #e6d2b5; --ac-color: #e6d2b5;
+            --equals-bg: #d4b895; --equals-color: #1f1912;
+            --cursor-color: #e6d2b5; --selection-bg: rgba(212, 184, 149, 0.32);
         }
-        :root.light-theme[data-accent="coral"] {
-            --op-bg: #ffebee; --op-color: #d32f2f; --ac-color: #d32f2f;
-            --equals-bg: #ff5c5c; --equals-color: #ffffff;
-            --cursor-color: #e53935; --selection-bg: rgba(255, 92, 92, 0.22);
+        :root.light-theme[data-accent="beige"] {
+            --op-bg: #f5efe6; --op-color: #8c6d46; --ac-color: #8c6d46;
+            --equals-bg: #c2a378; --equals-color: #ffffff;
+            --cursor-color: #9e7b4f; --selection-bg: rgba(194, 163, 120, 0.24);
         }
 
         :root[data-accent="cyan"] {
@@ -2718,13 +2718,6 @@
             <span>Texto en negrita</span>
             <span class="pro-sub-pill on" id="proBoldPill">ON</span>
         </button>
-                    <button class="menu-item pro-sub-option" id="hapticMenuBtn" role="menuitem" onclick="toggleHaptic();">
-                <svg viewBox="0 0 24 24">
-                    <path d="M0 15h2V9H0v6zm3 2h2V7H3v10zm19-8v6h2V9h-2zm-3 8h2V7h-2v10zM16.5 3h-9C6.67 3 6 3.67 6 4.5v15c0 .83.67 1.5 1.5 1.5h9c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5zM16 19H8V5h8v14z"/>
-                </svg>
-                <span>Vibración de teclas</span>
-                <span class="pro-sub-pill on" id="proHapticPill">ON</span>
-            </button>
 
         <div class="menu-divider"></div>
         <button class="menu-item" role="menuitem" onclick="openModal('privacy'); closeMenu();">
@@ -3361,15 +3354,15 @@
     let fractionOps = ['+', '+', '+'];
 
     const EARNED_ACCENT_PALETTE = [
-        { id: 'default', name: 'Original', hex: 'default', albumId: null,       albumLabel: '' },
-        { id: 'blue',    name: 'Azul',     hex: '#2979ff', albumId: 'cotidiano', albumLabel: 'Álbum 1: Uso Cotidiano (9/9)' },
-        { id: 'purple',  name: 'Púrpura',  hex: '#9c27b0', albumId: 'avanzado',  albumLabel: 'Álbum 2: Uso Avanzado (5/5)' },
-        { id: 'coral',   name: 'Coral',    hex: '#ff5c5c', albumId: 'secretos',  albumLabel: 'Álbum 3: Secretos Ocultos (5/5)' }
+        { id: 'default', name: 'Original',  hex: 'default', albumId: null,       albumLabel: '' },
+        { id: 'emerald', name: 'Esmeralda', hex: '#1db978', albumId: 'cotidiano', albumLabel: 'Álbum 1: Uso Cotidiano (9/9)' },
+        { id: 'purple',  name: 'Púrpura',   hex: '#9c27b0', albumId: 'avanzado',  albumLabel: 'Álbum 2: Uso Avanzado (5/5)' },
+        { id: 'blue',    name: 'Azul',      hex: '#2979ff', albumId: 'secretos',  albumLabel: 'Álbum 3: Secretos Ocultos (5/5)' }
     ];
 
     const PRO_ACCENT_PALETTE = [
         { id: 'amber',   name: 'Ámbar',     hex: '#ff9800' },
-        { id: 'emerald', name: 'Esmeralda', hex: '#1db978' },
+        { id: 'beige',   name: 'Beige',     hex: '#d4b895' },
         { id: 'sky',     name: 'Celeste',   hex: '#29b6f6' },
         { id: 'cyan',    name: 'Cian',      hex: '#00e5ff' },
         { id: 'rose',    name: 'Rosa',      hex: '#ec407a' },
@@ -3798,9 +3791,9 @@
                         <svg viewBox="0 0 280 54" aria-label="Historial agrupado por fechas">
                             <rect x="6" y="5" width="268" height="44" rx="10" fill="var(--num-bg)" stroke="var(--op-color)" stroke-opacity="0.35"/>
                             <text x="18" y="20" fill="var(--op-color)" font-size="10" font-weight="700">Hoy</text>
-                            <text x="235" y="36" text-anchor="end" fill="var(--text-color)" font-size="12" font-weight="700">45 × 2 = 90</text>
-                            <circle cx="255" cy="31" r="9" fill="var(--ac-bg)"/>
-                            <text x="255" y="34.5" text-anchor="middle" fill="var(--ac-color)" font-size="10" font-weight="700">✕</text>
+                            <circle cx="25" cy="31" r="9" fill="var(--ac-bg)"/>
+                            <text x="25" y="34.5" text-anchor="middle" fill="var(--ac-color)" font-size="10" font-weight="700">✕</text>
+                            <text x="262" y="36" text-anchor="end" fill="var(--text-color)" font-size="12" font-weight="700">45 × 2 = 90</text>
                         </svg>`,
                     steps: 'Pulsa el <kbd>reloj</kbd> arriba a la izquierda para abrir o cerrar'
                 },
@@ -3821,15 +3814,15 @@
                 {
                     emblem: '⋮',
                     title: 'Menú de Opciones y Colores Ganados',
-                    desc: '¿Qué es? El panel de ajustes, tema y recompensas. ¿Cómo funciona? En ⋮ → Color del teclado dispones de 4 colores desbloqueables sin Pro (Original, Azul, Púrpura y Coral) al completar cada álbum de la Colección.',
+                    desc: '¿Qué es? El panel de ajustes, tema y recompensas. ¿Cómo funciona? En ⋮ → Color del teclado dispones de 4 colores desbloqueables sin Pro (Original, Esmeralda, Púrpura y Azul) al completar cada álbum de la Colección.',
                     diagram: `
                         <svg viewBox="0 0 280 50" aria-label="4 colores ganados completando álbumes">
                             <circle cx="42" cy="25" r="12" fill="#f1c40f"/>
-                            <circle cx="106" cy="25" r="12" fill="#2979ff"/>
+                            <circle cx="106" cy="25" r="12" fill="#1db978"/>
                             <circle cx="170" cy="25" r="12" fill="#9c27b0"/>
-                            <circle cx="234" cy="25" r="12" fill="#ff5c5c"/>
+                            <circle cx="234" cy="25" r="12" fill="#2979ff"/>
                         </svg>`,
-                    steps: 'Completa los álbumes de <kbd>Libro 0</kbd> para desbloquear <kbd>Azul</kbd>, <kbd>Púrpura</kbd> y <kbd>Coral</kbd>'
+                    steps: 'Completa los álbumes de <kbd>Libro 0</kbd> para desbloquear <kbd>Esmeralda</kbd>, <kbd>Púrpura</kbd> y <kbd>Azul</kbd>'
                 }
             ]
         },
@@ -5644,9 +5637,6 @@
     /* ============ VIBRACIÓN TÁCTIL Y AUDIO ============ */
     function haptic(keyId = null) {
         playKeySound(keyId);
-        if (navigator.vibrate) {
-            navigator.vibrate(8);
-        }
     }
 
     /* ============ FORMATEO CON SEPARADORES DE MILES ============ */
@@ -7747,42 +7737,6 @@
         document.body.removeChild(ta);
     }
 
-    // Vibración háptica suave al tocar teclas
-let hapticEnabled = localStorage.getItem('calc_haptic') !== 'false'; // Activado por defecto
-
-function triggerHaptic(ms = 10) {
-    if (hapticEnabled && navigator.vibrate) {
-        navigator.vibrate(ms);
-    }
-}
-
-document.addEventListener('pointerdown', (e) => {
-    const btn = e.target.closest('button');
-    if (!btn || btn.disabled) return;
-
-    // Vibración ligeramente más marcada para '=' o 'AC', suave para el resto
-    if (btn.classList.contains('equals') || btn.classList.contains('l-eq') || btn.classList.contains('ac') || btn.classList.contains('l-ac')) {
-        triggerHaptic(18);
-    } else {
-        triggerHaptic(10);
-    }
-});
-function updateHapticUI() {
-    const pill = document.getElementById('proHapticPill');
-    if (pill) {
-        pill.textContent = hapticEnabled ? 'ON' : 'OFF';
-        pill.classList.toggle('on', hapticEnabled);
-    }
-}
-
-function toggleHaptic() {
-    hapticEnabled = !hapticEnabled;
-    localStorage.setItem('calc_haptic', hapticEnabled);
-    updateHapticUI();
-    if (hapticEnabled) triggerHaptic(15);
-}
-
-updateHapticUI();
 
 </script>
 
