@@ -89,9 +89,9 @@
 
         /* Cuando Texto en negrita (PRO) está activo */
         :root.pro-active {
-            --body-weight: 500;
-            --btn-weight: 600;
-            --equals-weight: 700;
+            --body-weight: 700;
+            --btn-weight: 700;
+            --equals-weight: 800;
         }
 
         /* ============ COLORES PERSONALIZADOS DEL TECLADO (MODO PRO) ============ */
@@ -2076,10 +2076,10 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             text-align: right;
-            padding: 4px 8px;
+            padding:4px 8px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: flex-start;
             margin-bottom: 2px;
             overflow: hidden;
             position: relative;
@@ -2100,7 +2100,7 @@
             border: none;
             outline: none;
             text-align: right;
-            font-size: clamp(2.5rem, 9.5vw, 4rem);
+            font-size: clamp(3.5rem, 12.5vw, 4.6rem);
             font-weight: var(--btn-weight);
             color: var(--text-color);
             caret-color: var(--cursor-color);
@@ -5831,20 +5831,19 @@
         }
 
         const len = formatted.length;
-        const compactLayout = isSciOpen || isMemBarOpen;
         const landscapePro = calcEl.classList.contains('pro-landscape-sci');
 
         if (landscapePro) {
-            if (len > 22)      exprInput.style.fontSize = '1.35rem';
-            else if (len > 15) exprInput.style.fontSize = '1.75rem';
-            else if (len > 10) exprInput.style.fontSize = '2.15rem';
+            if (len > 24)      exprInput.style.fontSize = '1.55rem';
+            else if (len > 18) exprInput.style.fontSize = '1.95rem';
+            else if (len > 13) exprInput.style.fontSize = '2.45rem';
             else               exprInput.style.fontSize = '';
-        } else if (len > 16) {
-            exprInput.style.fontSize = compactLayout ? '1.35rem' : '1.65rem';
-        } else if (len > 12) {
-            exprInput.style.fontSize = compactLayout ? '1.65rem' : '2.05rem';
-        } else if (len > 9) {
-            exprInput.style.fontSize = compactLayout ? '2.0rem' : '2.55rem';
+        } else if (len > 20) {
+            exprInput.style.fontSize = '1.95rem';
+        } else if (len > 15) {
+            exprInput.style.fontSize = '2.45rem';
+        } else if (len > 11) {
+            exprInput.style.fontSize = '3.05rem';
         } else {
             exprInput.style.fontSize = '';
         }
