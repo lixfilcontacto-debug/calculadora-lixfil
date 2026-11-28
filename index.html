@@ -5395,35 +5395,30 @@
         updateDisplay();
     }
 
-    async function enterProLandscape() {
+   function enterProLandscape() {
     isSciOpen = false;
     calcEl.classList.remove('sci-open');
     calcEl.classList.add('pro-landscape-sci');
     sciTubeBtn.classList.add('active-sci-panel');
     try {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-            await document.documentElement.requestFullscreen();
-        }
         if (screen.orientation && screen.orientation.lock) {
-            await screen.orientation.lock('landscape');
+            screen.orientation.lock('landscape').catch(() => {});
         }
     } catch (e) {}
     updateDisplay();
 }
 
-async function exitProLandscape() {
+function exitProLandscape() {
     calcEl.classList.remove('pro-landscape-sci');
     sciTubeBtn.classList.remove('active-sci-panel');
     try {
         if (screen.orientation && screen.orientation.unlock) {
             screen.orientation.unlock();
         }
-        if (document.fullscreenElement && document.exitFullscreen) {
-            await document.exitFullscreen();
-        }
     } catch (e) {}
     updateDisplay();
 }
+
 
     /* ============ DOBLE PÁGINA CIENTÍFICA HORIZONTAL (⇄) ============ */
     function toggleLandscapePage() {
