@@ -2506,18 +2506,17 @@
         }
 
         /* En móvil cuando ya está girado en horizontal (landscape real) */
-        @media (orientation: landscape) and (max-height: 560px) {
-            body {
-                align-items: stretch;
-            }
-            .calculator.pro-landscape-sci {
-                position: fixed;
-                inset: 0;
-                transform: none;
-                max-width: 100%;
-                width: 100%;
-                height: 100%;
-                height: 100dvh;
+       @media (orientation: landscape) and (max-width: 950px) {
+    body {
+        align-items: stretch;
+    }
+    .calculator.pro-landscape-sci {
+        position: fixed;
+        inset: 0;
+        transform: none; /* Esto evita el giro falso de CSS */
+        max-width: 100%;
+        width: 100%;
+        height: 100dvh;
                 border-radius: 0;
                 padding: calc(4px + env(safe-area-inset-top, 0))
                          calc(12px + env(safe-area-inset-right, 0))
