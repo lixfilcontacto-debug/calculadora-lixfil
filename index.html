@@ -4868,7 +4868,7 @@
             <div class="help-books-shelf">
                 <p class="help-intro">Explora los 3 sub-álbumes temáticos y descubre cada estampita:</p>
                 ${subAlbumCardsHtml}
-                <p class="stamp-coming-soon">✨ Próximamente más estampitas y nuevos álbumes...</p>
+                <p class="stamp-coming-soon">Próximamente más estampitas y nuevos álbumes...</p>
             </div>
         `;
         modalActions.innerHTML = `<button class="modal-btn primary" onclick="closeModal()">Cerrar</button>`;
@@ -6023,11 +6023,11 @@
                 return left;
             }
 
-            function parseTerm() {
-                let left = parsePower();
+           function parseTerm() {
+                let left = parseUnary();
                 while (peek() && (peek().value === '×' || peek().value === '÷')) {
                     const op = consume().value;
-                    const right = parsePower();
+                    const right = parseUnary();
                     if (op === '×') {
                         left *= right;
                     } else {
@@ -6039,10 +6039,10 @@
             }
 
             function parsePower() {
-                let base = parseUnary();
+                let base = parsePostfix();
                 while (peek() && (peek().value === '^' || peek().value === 'yroot' || peek().value === 'C' || peek().value === 'P')) {
                     const op = consume().value;
-                    const exp = parsePower();
+                    const exp = parseUnary();
                     if (op === '^') {
                         base = Math.pow(base, exp);
                     } else if (op === 'yroot') {
@@ -6062,7 +6062,7 @@
                     consume();
                     return -parseUnary();
                 }
-                return parsePostfix();
+                return parsePower();
             }
 
             function parsePostfix() {
@@ -6419,7 +6419,7 @@
 
         const result = evaluateMathExpression(cleanExpr);
         if (result === null) {
-            previewEl.textContent = 'Error de sintaxis';
+            previewEl.textContent = 'Error';
             return;
         }
 
