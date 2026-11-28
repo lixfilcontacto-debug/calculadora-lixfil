@@ -5395,24 +5395,28 @@
         updateDisplay();
     }
 
-   function enterProLandscape() {
+   async function enterProLandscape() {
     isSciOpen = false;
     calcEl.classList.remove('sci-open');
     calcEl.classList.add('pro-landscape-sci');
     sciTubeBtn.classList.add('active-sci-panel');
     try {
-        if (screen.orientation && screen.orientation.lock) {
-            screen.orientation.lock('landscape').catch(() => {});
+        if (window.Capacitor && Capacitor.Plugins && Capacitor.Plugins.ScreenOrientation) {
+            await Capacitor.Plugins.ScreenOrientation.lock({ orientation: 'landscape' });
+        } else if (screen.orientation && screen.orientation.lock) {
+            await screen.orientation.lock('landscape');
         }
     } catch (e) {}
     updateDisplay();
 }
 
-function exitProLandscape() {
+async function exitProLandscape() {
     calcEl.classList.remove('pro-landscape-sci');
     sciTubeBtn.classList.remove('active-sci-panel');
     try {
-        if (screen.orientation && screen.orientation.unlock) {
+        if (window.Capacitor && Capacitor.Plugins && Capacitor.Plugins.ScreenOrientation) {
+            await Capacitor.Plugins.ScreenOrientation.unlock();
+        } else if (screen.orientation && screen.orientation.unlock) {
             screen.orientation.unlock();
         }
     } catch (e) {}
